@@ -1,0 +1,4 @@
+pyblake2
+bitstring
+configparser
+requests
