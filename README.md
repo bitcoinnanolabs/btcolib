@@ -2,7 +2,7 @@
 
 
 
-.. _utilities-ref:
+
 
 Utilities
 ==========
@@ -67,4 +67,3 @@ For a dict of all available units and their amount in raw:
      'uxrb': Decimal('1000000000000000000'),
      'xrb': Decimal('1000000000000000000000000')}
 
-.. code-block:: python
