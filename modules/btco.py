@@ -366,26 +366,26 @@ def process_pending(account, index_pos, wallet_seed):
 
 """
 Conversion tools for converting Nano units
-Units source: https://github.com/nanocurrency/nano-node/wiki/Distribution,-Mining-and-Units
-Gnano/Gxrb/Grai = 1000000000000000000000000000000000raw, 10^33
-Mnano/Mxrb/Mrai = 1000000000000000000000000000000raw, 10^30
-knano/kxrb/krai = 1000000000000000000000000000raw, 10^27
-nano/xrb/rai  = 1000000000000000000000000raw, 10^24
-mnano/mxrb/mrai = 1000000000000000000000raw, 10^21
-unano/uxrb/urai = 1000000000000000000raw, 10^18
+Units source: https://github.com/btcocurrency/btco-node/wiki/Distribution,-Mining-and-Units
+Gbtco/Gxrb/Grai = 1000000000000000000000000000000000raw, 10^33
+Mbtco/Mxrb/Mrai = 1000000000000000000000000000000raw, 10^30
+kbtco/kxrb/krai = 1000000000000000000000000000raw, 10^27
+btco/xrb/rai  = 1000000000000000000000000raw, 10^24
+mbtco/mxrb/mrai = 1000000000000000000000raw, 10^21
+ubtco/uxrb/urai = 1000000000000000000raw, 10^18
 1 raw is the smallest possible division
-Mnano used to be called Mxrb or Mrai
-1 nano (formerly xrb or rai) is 10^24 raw
-Mnano is also called NANO, or in the past XRB
+Mbtco used to be called Mxrb or Mrai
+1 btco (formerly xrb or rai) is 10^24 raw
+Mbtco is also called BTCO, or in the past XRB
 """
 
 BASE_UNIT = 'raw'
-UNIT_NAMES = ['xrb', 'rai', 'nano']
+UNIT_NAMES = ['xrb', 'rai', 'btco']
 UNITS_TO_RAW = {BASE_UNIT: Decimal(1)}
 
 
 def _populate_units():
-    # populate the existing units, eg krai, Mrai, Mxrb, Gnano etc.
+    # populate the existing units, eg krai, Mrai, Mxrb, Gbtco etc.
     for name in UNIT_NAMES:
         for i, prefix in enumerate(['G', 'M', 'k', '', 'm', 'u']):
             in_raw = 10 ** (33 - (i * 3))
@@ -393,8 +393,8 @@ def _populate_units():
             UNITS_TO_RAW[unit_name] = Decimal(in_raw)
 
     # special case for XRB
-    UNITS_TO_RAW['XRB'] = UNITS_TO_RAW['Mnano']
-    UNITS_TO_RAW['NANO'] = UNITS_TO_RAW['Mnano']
+    UNITS_TO_RAW['XRB'] = UNITS_TO_RAW['Mbtco']
+    UNITS_TO_RAW['BTCO'] = UNITS_TO_RAW['Mbtco']
 
 
 def convert(value, from_unit, to_unit):
