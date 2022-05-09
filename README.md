@@ -1,6 +1,3 @@
-# btco sender
-
-# set settings on config.ini
 
 
 
@@ -9,7 +6,7 @@
 
 Utilities
 ==========
-
+set settings on config.ini
 
 Conversion tools
 ----------------
@@ -70,3 +67,4 @@ For a dict of all available units and their amount in raw:
      'uxrb': Decimal('1000000000000000000'),
      'xrb': Decimal('1000000000000000000000000')}
 
+.. code-block:: python
