@@ -1,0 +1,17 @@
+version: "3"
+services:
+  zmqproxy:
+    image: bitcoinnanolabs/botsend
+    container_name: botsend
+    ports:
+      - ${PORT}:${PORT}
+      
+    environment:
+      WALLET: ${WALLET}
+      SEED: ${SEED}
+      INDEX: ${INDEX}
+    volumes:
+      - botsend:/code
+
+volumes:
+  botsend: {}
